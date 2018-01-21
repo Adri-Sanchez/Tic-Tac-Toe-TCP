@@ -1,10 +1,10 @@
-# UGR-FR
-##### Modelos de Computación - Dpto. de Ciencias de la Computación e Inteligencia Artificial
+# Tic-Tac-Toe TCP
+##### Fundamentos de Redes - Dpto. de Teoría de Señal, Telemática y Comunicaciones
 ###### Escuela Técnica Superior de Ingeniería Informática y Telecomunicaciones (Universidad de Granada)
 
 *Leer en otro idioma: [English](README.eng.md)*
 
-Práctica de la asignatura Fundamentos de Redes (Universidad de Granada) usando Java y sockets TCP, para la creación del clásico Tic-Tac-Toe jugable desde distintas instancias de una terminal Linux entre dos jugadores mediante arquitectura Cliente-Servidor.
+Proyecto para la asignatura Fundamentos de Redes (Universidad de Granada) usando Java y sockets TCP, para la creación del clásico Tic-Tac-Toe jugable desde distintas instancias de una terminal Linux entre dos jugadores mediante arquitectura Cliente-Servidor.
 
 ## Autores
 
