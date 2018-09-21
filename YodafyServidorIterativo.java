@@ -43,7 +43,7 @@ public class YodafyServidorIterativo {
 				// Este esquema permite que se puedan usar hebras más fácilmente.
 				/*ProcesadorYodafy procesador=new ProcesadorYodafy(socketConexion);
 				procesador.start();*/
-                                                                        juego.new_player(socketConexion);
+                juego.new_player(socketConexion);
 				
 			} while (true);
 			

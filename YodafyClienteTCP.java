@@ -81,78 +81,85 @@ public class YodafyClienteTCP {
                 //////////////////////////////////////////////////////
 
                 do {
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-										cadena="nada";
-										System.out.println("Esperando al otro jugador");
+					cadena="nada";
+					System.out.println("Esperando al otro jugador");
                     cadena = inReader.readLine();
                     System.out.println("El servidor envía: " + cadena);
 
                     if (cadena.charAt(0) == 'T' && cadena.charAt(1) == jugador.charAt(1)) {        // Cadena se gestiona por CX y jugador por JX
+						System.out.print("\033[H\033[2J");  
+						System.out.flush();
+						System.out.println(ANSI_WHITE + "- - - - - - - -" + ANSI_RESET);
+						System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
+						
+						int j=0;
+						
+						for (int i = 0; i < 9; i++) {
+							
+							if(cadena.charAt(i+2)=='o')
+								System.out.print(ANSI_GREEN + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
+							
+							else if(cadena.charAt(i+2)=='x')
+								System.out.print(ANSI_RED + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
+							
+							else
+								System.out.print(ANSI_WHITE + " " + cadena.charAt(i + 2) + " | " + ANSI_RESET);
 
-												System.out.print("\033[H\033[2J");  
-												System.out.flush();
-												System.out.println(ANSI_WHITE + "- - - - - - - -" + ANSI_RESET);
-												System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
-												int j=0;
-												for (int i = 0; i < 9; i++) {
-																if(cadena.charAt(i+2)=='o')
-																		System.out.print(ANSI_GREEN + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
-																else if(cadena.charAt(i+2)=='x')
-																		System.out.print(ANSI_RED + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
-																else
-																		System.out.print(ANSI_WHITE + " " + cadena.charAt(i + 2) + " | " + ANSI_RESET);
-
-																j++;
-                                if (j==3) {
-																		j=0;                 
-                                    System.out.println(ANSI_WHITE + "\n- - - - - - - -" + ANSI_RESET);
+							j++;
+                            
+                            if (j==3) {
+							    j=0;                 
+                                System.out.println(ANSI_WHITE + "\n- - - - - - - -" + ANSI_RESET);
 																		System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
-                                }
                             }
+                        }
+                        
                         System.out.print("\n\nTres en Raya (Online Game of the Year edition)\n"
                                 + "1.- Introduce casilla (Número). \n2.- Salir \n\nIntroduce una opción: ");
 
                         eleccion = cin.nextInt();
 
                         if (eleccion == 1) {
-														System.out.print("\033[H\033[2J");  
-    												System.out.flush();
-
+							System.out.print("\033[H\033[2J");  
+    						System.out.flush();
                             System.out.flush();
-	
-														System.out.println(ANSI_WHITE + "- - - - - - - -" + ANSI_RESET);
-														System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
+							System.out.println(ANSI_WHITE + "- - - - - - - -" + ANSI_RESET);
+							System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
                             
-														j=0;
+							j=0;
+                            
                             for (int i = 0; i < 9; i++) {
-																if(cadena.charAt(i+2)=='o')
-																		System.out.print(ANSI_GREEN + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
-																else if(cadena.charAt(i+2)=='x')
-																		System.out.print(ANSI_RED + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
-																else
-																		System.out.print(ANSI_WHITE + " " + cadena.charAt(i + 2) + " | " + ANSI_RESET);
+							
+								if(cadena.charAt(i+2)=='o')
+									System.out.print(ANSI_GREEN + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
+							
+								else if(cadena.charAt(i+2)=='x')
+									System.out.print(ANSI_RED + " " + cadena.charAt(i + 2) + ANSI_RESET + ANSI_WHITE + " | " + ANSI_RESET);
+							
+								else
+									System.out.print(ANSI_WHITE + " " + cadena.charAt(i + 2) + " | " + ANSI_RESET);
 
-																j++;
+								j++;
+                            
                                 if (j==3) {
-																		j=0;                 
+									j=0;                 
                                     System.out.println(ANSI_WHITE + "\n- - - - - - - -" + ANSI_RESET);
-																		System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
+									System.out.print(ANSI_WHITE + "|" + ANSI_RESET);
                                 }
                             }
-														System.out.println("\nIntroduce el número de casilla: ");
+							
+							System.out.println("\nIntroduce el número de casilla: ");
                             eleccion = cin.nextInt();
 
-														while(cadena.charAt(eleccion+1)=='o' || cadena.charAt(eleccion+1)=='x'){
+							while(cadena.charAt(eleccion+1)=='o' || cadena.charAt(eleccion+1)=='x'){
                            		System.out.println("\nCasilla ya ocupada: ");
                             	eleccion = cin.nextInt();
-														}
-	                          System.out.println("\nHas elegido la casilla: " + eleccion);
+							}
+	                        
+	                        System.out.println("\nHas elegido la casilla: " + eleccion);
                             outPrinter.println("C" + eleccion);
 														
-														Thread.sleep(1000);
+							Thread.sleep(1000);
 
                         }
                         
@@ -161,25 +168,22 @@ public class YodafyClienteTCP {
                         }	
 											
                     }             
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
                 } while (!cadena.contains("fin"));
 
                 if (cadena.contains("fine")) {
                     System.out.println(ANSI_CYAN + "\n******************************Empate************************************\n" + ANSI_RESET);
-										Thread.sleep(5000);
+					Thread.sleep(5000);
                 } 
+                
                 else if (cadena.contains("fing")) {
-
                     System.out.println(ANSI_BLUE + "\n******************************Gana J" + cadena.charAt(4) + "************************************\n" + ANSI_RESET);
-										Thread.sleep(5000);
+					Thread.sleep(5000);
                 } 
-                else {
 
+                else {
                     System.out.println(ANSI_BLACK + "\n******************************Ragequit xddd*****************************\n" + ANSI_RESET);
-										Thread.sleep(5000);
+					Thread.sleep(5000);
                 }
 
                 // Una vez terminado el servicio, cerramos el socket (automáticamente se cierran
