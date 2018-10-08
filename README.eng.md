@@ -4,7 +4,7 @@
 
 *Read in another language: [Spanish](README.md)*
 
-Proyect for the subject Networks Fundamentals (University of Granada) using Java and TCP sockets for the recreation of the classic Tic-Tac-Toe playable from different instances of a Linux terminal between two players using the Client-Server architecture.
+Project for the subject Networks Fundamentals (University of Granada) using Java and TCP sockets for the recreation of the classic Tic-Tac-Toe playable from different instances of a Linux terminal between two players using the Client-Server architecture.
 ## Authors
 
 * **Adrián Sánchez Cerrillo** - [Adri-Sanchez](https://github.com/Adri-Sanchez)
